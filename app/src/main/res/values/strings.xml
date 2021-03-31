@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RIO</string>
+    <string name="a">AVENGERS</string>
+    <string name="b">Enter Character Name</string>
+    <string name="c">LOGIN</string>
+    <string name="d">Enter Password</string>
+    <string name="e">Logged in as </string>
+    <string name="f">Create Account</string>
+    <string name="g">Already have an account? Login</string>
+    <string name="preference_file_name">Avengers Preferences</string>
+</resources>

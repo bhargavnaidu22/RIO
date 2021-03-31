@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "653128830930",
+    "project_id": "gbn-avengers",
+    "storage_bucket": "gbn-avengers.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653128830930:android:a5868d8b9acff981c0020b",
+        "android_client_info": {
+          "package_name": "com.gbnsolutions.rio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653128830930-k92ig00p73aufhbahc23gdfh4ouaoup5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gbnsolutions.rio",
+            "certificate_hash": "8e5b73b48e918e07b31de9738ac2962bdad0d745"
+          }
+        },
+        {
+          "client_id": "653128830930-tvhsbnqrlkmpsbdmq2lrc0nu6v567vh2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTzJi66tWkdvyKYqfGJBF20pmGBGv6kXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653128830930-tvhsbnqrlkmpsbdmq2lrc0nu6v567vh2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
