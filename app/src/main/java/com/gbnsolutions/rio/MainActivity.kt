@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.gbnsolutions.rio.activity.Charecter
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn",false)
         setContentView(R.layout.activity_main)
         if (isLoggedIn){
-            val i = Intent(this@MainActivity,Charecter::class.java)
+            val i = Intent(this@MainActivity, Charecter::class.java)
             startActivity(i)
             finish()
         }

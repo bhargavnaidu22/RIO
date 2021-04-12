@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RIO">
         <activity android:name=".Register"></activity>
-        <activity android:name=".Charecter" />
+        <activity android:name=".activity.Charecter" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
