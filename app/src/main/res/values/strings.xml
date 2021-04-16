@@ -11,8 +11,8 @@
     <string name="close_drawer">close drawer</string>
     <string name="preference_file_name">Avengers Preferences</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Welcome to GBN Avengers</string>
     <string name="home">Home</string>
-    <string name="about">About</string>
+    <string name="profile">Profile</string>
     <string name="status">Status</string>
 </resources>

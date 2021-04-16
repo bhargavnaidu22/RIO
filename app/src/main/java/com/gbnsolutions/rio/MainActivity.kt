@@ -11,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.gbnsolutions.rio.activity.Charecter
+import com.gbnsolutions.rio.fragment.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 
 
