@@ -26,10 +26,17 @@ class MainActivity : AppCompatActivity() {
     lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        sharedPreferences = getSharedPreferences(getString(R.string.preference_file_name), Context.MODE_PRIVATE)
-        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn",false)
+        sharedPreferences =
+            getSharedPreferences(getString(R.string.preference_file_name), Context.MODE_PRIVATE)
+        if (intent != null) {
+            val i = intent.getStringExtra("logout")
+            if (i == "a") {
+                editPreferences()
+            }
+        }
+        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
         setContentView(R.layout.activity_main)
-        if (isLoggedIn){
+        if (isLoggedIn) {
             val i = Intent(this@MainActivity, Charecter::class.java)
             startActivity(i)
             finish()
@@ -61,7 +68,7 @@ class MainActivity : AppCompatActivity() {
     private operator fun next() {
         mAuth!!.signInWithEmailAndPassword(userName!!, userPassword!!).addOnCompleteListener(
             this@MainActivity
-        ){ task ->
+        ) { task ->
             if (task.isSuccessful) {
                 Toast.makeText(this@MainActivity, "Logged in Successfully !", Toast.LENGTH_SHORT)
                     .show()
@@ -74,7 +81,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    fun savePreferences(){
-        sharedPreferences.edit().putBoolean("isLoggedIn",true).apply()
+
+    fun savePreferences() {
+        sharedPreferences.edit().putBoolean("isLoggedIn", true).apply()
+    }
+
+    fun editPreferences() {
+        sharedPreferences.edit().putBoolean("isLoggedIn", false).apply()
     }
 }

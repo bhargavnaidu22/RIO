@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/register"
     tools:context=".MainActivity">
-<TextView
-    android:id="@+id/avengers"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/a"
-    android:textSize="24sp"
-    android:textColor="@color/black"
-    android:layout_marginTop="80dp"
-    android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/avengers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:text="@string/a"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
-        android:textColorLink="@color/purple_700"
         android:layout_below="@+id/avengers"
         android:layout_centerInParent="true"
+        android:ems="10"
         android:hint="@string/b"
+        android:inputType="textEmailAddress"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/black" />
 
@@ -31,11 +32,12 @@
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
         android:layout_below="@+id/name"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
+        android:ems="8"
         android:hint="@string/d"
+        android:inputType="textPassword"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/black" />
 
@@ -47,12 +49,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:text="@string/c" />
+
     <TextView
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/f"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="50dp"
+        android:text="@string/f" />
+
 </RelativeLayout>

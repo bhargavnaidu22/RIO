@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">RIO</string>
     <string name="a">AVENGERS</string>
-    <string name="b">Enter Character Name</string>
+    <string name="b">Enter Email ID</string>
     <string name="c">LOGIN</string>
     <string name="d">Enter Password</string>
     <string name="e">Logged in as </string>
@@ -10,9 +10,23 @@
     <string name="open_drawer">open drawer</string>
     <string name="close_drawer">close drawer</string>
     <string name="preference_file_name">Avengers Preferences</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Welcome to GBN Avengers</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
     <string name="status">Status</string>
+    <string name="logout">Logout</string>
+    <string name="enter_user_name_here">Enter User Name here</string>
+    <string name="enter_email_id_here">Enter Email Id here</string>
+    <string name="enter_password_here">Enter Password here</string>
+    <string name="confirm_password_here">Confirm Password here</string>
+    <string name="register">Register</string>
+    <string name="statustime">time</string>
+    <string name="statusstate">state</string>
+    <string name="entrmsg">Enter Message</string>
+    <string name="user_name">Loading....</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="update">UPDATE</string>
+    <string name="username">User Name</string>
+    <string name="phone">Phone</string>
 </resources>

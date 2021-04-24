@@ -9,9 +9,9 @@
         android:roundIcon="@drawable/logo1"
         android:supportsRtl="true"
         android:theme="@style/Theme.RIO">
-        <activity android:name=".Register">
-
-        </activity>
+        <activity android:name=".activity.EditProfile"></activity>
+        <activity android:name=".activity.Chat" />
+        <activity android:name=".Register" />
         <activity android:name=".activity.Charecter" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -20,7 +20,7 @@ class FragmentAdapter(supportFragmentManager: FragmentManager):
         return mFragmentList.size
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence {
         return mFragmentTitleList[position]
     }
     fun addFragment(fragment: Fragment,title: String){

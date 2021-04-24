@@ -9,6 +9,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class Register : AppCompatActivity() {
     lateinit var edtuserName: EditText
@@ -21,6 +23,8 @@ class Register : AppCompatActivity() {
     lateinit var password: String
     lateinit var confirmpassword: String
     lateinit var mAuth: FirebaseAuth
+    private var firebaseUserID: String =""
+    lateinit var refUsers: DatabaseReference
     lateinit var relogin: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,22 +45,22 @@ class Register : AppCompatActivity() {
             email = edtemailId.getText().toString().trim { it <= ' ' }
             password = edtpassword.getText().toString().trim { it <= ' ' }
             confirmpassword = edtconfirmPassword.getText().toString().trim { it <= ' ' }
-            if (name!!.isEmpty()) {
+            if (name.isEmpty()) {
                 Toast.makeText(this@Register, "Please enter Name", Toast.LENGTH_SHORT)
                     .show()
-            } else if (email!!.isEmpty()) {
+            } else if (email.isEmpty()) {
                 Toast.makeText(
                     this@Register,
                     "Please enter EMail ID",
                     Toast.LENGTH_SHORT
                 ).show()
-            } else if (password!!.isEmpty() && password!!.length < 8) {
+            } else if (password.isEmpty() && password.length < 8) {
                 Toast.makeText(
                     this@Register,
                     "Please enter a Valid password",
                     Toast.LENGTH_SHORT
                 ).show()
-            } else if (confirmpassword!!.isEmpty()) {
+            } else if (confirmpassword.isEmpty()) {
                 Toast.makeText(
                     this@Register,
                     "Please enter COnfirm pasword",
@@ -79,12 +83,27 @@ class Register : AppCompatActivity() {
             this@Register
         ) { task ->
             if (task.isSuccessful) {
-                Toast.makeText(
-                    this@Register,
-                    "User registration successful !",
-                    Toast.LENGTH_SHORT
-                ).show()
-                startActivity(Intent(this@Register, MainActivity::class.java))
+                firebaseUserID = mAuth.currentUser!!.uid
+                refUsers = FirebaseDatabase.getInstance().reference.child("Users").child(firebaseUserID)
+
+                val userHashMap = HashMap<String, Any>()
+                userHashMap["uid"] = firebaseUserID
+                userHashMap["email"] = edtemailId.getText().toString().trim { it <= ' ' }
+                userHashMap["password"] = edtpassword.getText().toString().trim { it <= ' ' }
+                userHashMap["username"] = edtuserName.getText().toString().trim { it <= ' ' }
+                userHashMap["profile"] = "https://firebasestorage.googleapis.com/v0/b/gbn-avengers.appspot.com/o/Login%2Flogo1.png?alt=media&token=4944df62-6d53-4a43-ad77-99581bcfce81"
+                userHashMap["phone"] = ""
+                refUsers.updateChildren(userHashMap)
+                    .addOnCompleteListener {task->
+                        if (task.isSuccessful){
+                            Toast.makeText(
+                                this@Register,
+                                "User registration successful !",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            startActivity(Intent(this@Register, MainActivity::class.java))
+                        }
+                    }
             } else {
                 Toast.makeText(
                     this@Register,
