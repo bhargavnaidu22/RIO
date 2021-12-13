@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -89,10 +90,11 @@ class Register : AppCompatActivity() {
                 val userHashMap = HashMap<String, Any>()
                 userHashMap["uid"] = firebaseUserID
                 userHashMap["email"] = edtemailId.getText().toString().trim { it <= ' ' }
-                userHashMap["password"] = edtpassword.getText().toString().trim { it <= ' ' }
+//                userHashMap["password"] = edtpassword.getText().toString().trim { it <= ' ' }
                 userHashMap["username"] = edtuserName.getText().toString().trim { it <= ' ' }
                 userHashMap["profile"] = "https://firebasestorage.googleapis.com/v0/b/gbn-avengers.appspot.com/o/Login%2Flogo1.png?alt=media&token=4944df62-6d53-4a43-ad77-99581bcfce81"
                 userHashMap["phone"] = ""
+                userHashMap["status"] = "https://firebasestorage.googleapis.com/v0/b/gbn-avengers.appspot.com/o/Login%2Fic_profile.png?alt=media&token=7ca935a8-3409-48eb-a425-37aced50b88f"
                 refUsers.updateChildren(userHashMap)
                     .addOnCompleteListener {task->
                         if (task.isSuccessful){

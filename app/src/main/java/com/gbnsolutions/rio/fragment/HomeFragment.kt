@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.cooltechworks.views.shimmer.ShimmerRecyclerView
 import com.gbnsolutions.rio.R
 import com.gbnsolutions.rio.adapter.HomeRecyclerAdapter
 import com.gbnsolutions.rio.model.Users
@@ -22,7 +23,7 @@ import java.util.ArrayList
 
 
 class HomeFragment : Fragment() {
-    lateinit var recyclerHome: RecyclerView
+    lateinit var recyclerHome: ShimmerRecyclerView
     lateinit var layoutManager: RecyclerView.LayoutManager
     lateinit var recyclerAdapter: HomeRecyclerAdapter
     private var Lists :List<Users>?= null
@@ -31,7 +32,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
-        recyclerHome = view.findViewById(R.id.status)
+        recyclerHome = view.findViewById(R.id.homrecyclerView)
         Lists = ArrayList()
         retriveAllUsers()
         layoutManager = LinearLayoutManager(activity)
@@ -67,5 +68,4 @@ class HomeFragment : Fragment() {
 
         })
     }
-
 }

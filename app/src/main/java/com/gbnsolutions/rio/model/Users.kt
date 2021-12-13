@@ -1,7 +1,5 @@
 package com.gbnsolutions.rio.model
 
-import android.net.Uri
-
 class Users {
     private var uid: String = ""
     private var username: String = ""
@@ -9,14 +7,16 @@ class Users {
     private var email: String = ""
     private var phone: String = ""
     private var password: String = ""
+    private var status: String =""
 
     constructor()
-    constructor(uid: String, username: String, profile: String , email: String , password: String) {
+    constructor(uid: String, username: String, profile: String , email: String , password: String, status: String) {
         this.uid = uid
         this.username = username
         this.profile = profile
         this.email = email
         this.password = password
+        this.status = status
     }
     fun getUID(): String?{
         return uid
@@ -53,6 +53,12 @@ class Users {
         return password
     }
     fun setPassword(password: String){
-        this.password
+        this.password =password
+    }
+    fun getStatus(): String?{
+        return status
+    }
+    fun setStatus(status: String){
+        this.status = status
     }
 }

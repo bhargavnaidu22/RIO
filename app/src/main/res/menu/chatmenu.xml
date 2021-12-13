@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/view"
-        android:title="view"/>
+        android:title="@string/view"/>
     <item
         android:id="@+id/clear"
-        android:title="clear chat"/>
+        android:title="@string/clear_chat"/>
     <item
         android:id="@+id/block"
-        android:title="block"/>
+        android:title="@string/block"/>
 </menu>

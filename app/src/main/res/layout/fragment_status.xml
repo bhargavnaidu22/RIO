@@ -3,14 +3,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D8EEFB"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/main_bg"
     tools:context=".fragment.StatusFragment">
+    <LinearLayout
+        android:id="@+id/statuso"
+        android:layout_width="match_parent"
+        android:weightSum="7"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#BDEACF">
+        <Button
+            android:id="@+id/add"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_attach_file"/>
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:text="@string/user_name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="26dp"
+            android:layout_marginStart="26dp" />
+        <Button
+            android:id="@+id/upload"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_action_name"/>
+    </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/status"
+    <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+        android:id="@+id/statusrecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:padding="10dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shimmer_demo_angle="20"
+        app:shimmer_demo_child_count="10"
+        android:layout_below="@id/statuso"
+        app:shimmer_demo_grid_child_count="2"
+        app:shimmer_demo_layout="@layout/demo_status"
+        app:shimmer_demo_layout_manager_type="linear_vertical" />
 
 </RelativeLayout>

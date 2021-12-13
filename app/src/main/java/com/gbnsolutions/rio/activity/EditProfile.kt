@@ -56,7 +56,9 @@ class EditProfile : AppCompatActivity() {
         update.setOnClickListener {
             refUsers!!.child("phone").setValue(phone.getText().toString().trim { it <= ' ' })
             refUsers!!.child("username").setValue(textView.getText().toString().trim { it <= ' ' })
-            Upload(uri)
+            if (uri!!.equals(null)) {
+                Upload(uri)
+            }
             Toast.makeText(
                 this@EditProfile,
                 "Profile Updated successful!",
@@ -112,4 +114,3 @@ class EditProfile : AppCompatActivity() {
         }
     }
 }
-

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/register"
+    android:background="@drawable/login_background"
     tools:context=".MainActivity">
 
     <TextView
@@ -25,6 +25,7 @@
         android:ems="10"
         android:hint="@string/b"
         android:inputType="textEmailAddress"
+        android:textColorHint="#000000"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/black" />
 
@@ -37,6 +38,7 @@
         android:layout_marginTop="40dp"
         android:ems="8"
         android:hint="@string/d"
+        android:textColorHint="#000000"
         android:inputType="textPassword"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/black" />

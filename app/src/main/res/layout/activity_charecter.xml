@@ -16,34 +16,37 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/purple_500">
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:src="@drawable/ic_profile"
-                android:tint="@android:color/white"/>
+                android:tint="@android:color/white" />
+
             <TextView
                 android:id="@+id/user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginLeft="26dp"
                 android:text="@string/user_name"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginLeft="26dp"
-                android:layout_marginStart="26dp" />
+                android:textColor="@color/white"
+                android:textStyle="bold" />
         </androidx.appcompat.widget.Toolbar>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabBackground="@color/teal_200"
+            app:tabBackground="@color/purple_200"
             app:tabGravity="fill"
             app:tabInlineLabel="true"
             app:tabMode="fixed"
             app:tabIndicatorColor="@android:color/white"
             app:tabTextAppearance="@style/CustomTabStyle"
-            app:tabTextColor="@color/black" />
+            app:tabTextColor="@color/white" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
@@ -51,4 +54,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/appbar" />
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-6970925251560869/6385979520">
+    </com.google.android.gms.ads.AdView>
 </RelativeLayout>

@@ -29,4 +29,9 @@
     <string name="update">UPDATE</string>
     <string name="username">User Name</string>
     <string name="phone">Phone</string>
+    <string name="sample_name">Sample Name</string>
+    <string name="tap_to_chat">Tap to chat</string>
+    <string name="view">view</string>
+    <string name="clear_chat">clear chat</string>
+    <string name="block">block</string>
 </resources>

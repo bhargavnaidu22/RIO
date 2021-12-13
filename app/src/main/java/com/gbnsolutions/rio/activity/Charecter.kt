@@ -16,6 +16,7 @@ import com.gbnsolutions.rio.fragment.HomeFragment
 import com.gbnsolutions.rio.fragment.ProfileFragment
 import com.gbnsolutions.rio.fragment.StatusFragment
 import com.gbnsolutions.rio.model.Users
+import com.google.android.gms.ads.*
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -29,6 +30,7 @@ class Charecter : AppCompatActivity() {
     lateinit var toolbar: Toolbar
     lateinit var username: TextView
     lateinit var profile: ImageView
+    lateinit var adView: AdView
     var refUsers: DatabaseReference?= null
     var firebaseUser: FirebaseUser?= null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,9 +43,36 @@ class Charecter : AppCompatActivity() {
         profile = findViewById(R.id.profile_image)
         tab = findViewById(R.id.tab_Layout)
         toolbar = findViewById(R.id.toolbar)
+        adView = findViewById(R.id.adView)
         setUpToolbar()
         setupTabs()
+        MobileAds.initialize(this) {}
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+        adView.adListener = object: AdListener() {
+            override fun onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+            }
 
+            override fun onAdFailedToLoad(adError : LoadAdError) {
+                // Code to be executed when an ad request fails.
+                adView.loadAd(adRequest)
+            }
+
+            override fun onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+            }
+
+            override fun onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+            }
+
+            override fun onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+            }
+        }
         refUsers!!.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){
@@ -52,9 +81,7 @@ class Charecter : AppCompatActivity() {
                     Picasso.get().load(user.getProfile()).placeholder(R.drawable.ic_profile).into(profile)
                 }
             }
-
             override fun onCancelled(error: DatabaseError) {
-
             }
 
         })
