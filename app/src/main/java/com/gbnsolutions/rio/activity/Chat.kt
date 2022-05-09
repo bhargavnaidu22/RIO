@@ -92,10 +92,10 @@ class Chat : AppCompatActivity() {
                             if (!status!!.isEmpty()) {
                                 if (status == "Offline") {
                                     status1.setText("Offline")
-                                    status1.setVisibility(View.VISIBLE)
+                                    status1.visibility = View.VISIBLE
                                 } else {
                                     status1.setText(status)
-                                    status1.setVisibility(View.VISIBLE)
+                                    status1.visibility = View.VISIBLE
                                 }
                             }
                         }
